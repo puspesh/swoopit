@@ -19,6 +19,9 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/partial2',
       controller: 'MyCtrl2'
     }).
+    when('/admin', {
+      controller: 'AdminCtrl'
+    }).
     otherwise({
       redirectTo: '/view1'
     });

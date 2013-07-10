@@ -4,7 +4,6 @@
 
 angular.module('myApp.controllers', []).
   controller('AppCtrl', function ($scope, $http) {
-
     $http({
       method: 'GET',
       url: '/api/name'
@@ -17,9 +16,9 @@ angular.module('myApp.controllers', []).
     });
 
   }).
-  controller('MyCtrl1', function ($scope) {
+  controller('AdminCtrl', function ($scope) {
     // write Ctrl here
-
+	console.log('on Admin page');
   }).
   controller('MyCtrl2', function ($scope) {
     // write Ctrl here

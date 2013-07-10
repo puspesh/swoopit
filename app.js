@@ -5,6 +5,7 @@
 
 var express = require('express'),
   routes = require('./routes'),
+  admin = require('./routes/admin'),
   api = require('./routes/api'),
   http = require('http'),
   path = require('path');
@@ -43,6 +44,7 @@ if (app.get('env') === 'production') {
 
 // serve index and view partials
 app.get('/', routes.index);
+app.get('/admin', admin.admin);
 app.get('/partials/:name', routes.partials);
 
 // JSON API
