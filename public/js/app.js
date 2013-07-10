@@ -6,7 +6,8 @@ angular.module('myApp', [
   'myApp.controllers',
   'myApp.filters',
   'myApp.services',
-  'myApp.directives'
+  'myApp.directives',
+  '$strap.directives'
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
