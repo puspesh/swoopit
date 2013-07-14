@@ -4,9 +4,29 @@ html(ng-app="myApp")
     meta(charset='utf8')
     base(href='/')
     title Swoop it in
-    link(rel='stylesheet', href='/css/app.css')
     link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/app.css')
     link(href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css", rel="stylesheet")
     link(rel="stylesheet", href="http://use.typekit.net/c/5d5751/museo-slab:n3:n5,proxima-nova:n3:n4:n6.SKB:K:2,WH7:K:2,Vmx:K:2,W0V:K:2,W0X:K:2/d?3bb2a6e53c9684ffdc9a98f71f5b2a62bc5e6c08d76a27c2c8c99098d9bb1cf935634698fe8368059b4f66ae2040f0e04887b2406e9c5e4d548c08aad08b798561a36439d5ede98be57b13683cb5f0195c478ea253c22782e36047653f569143b8b889e2f50a7331679e3cb44afd69dfad35f3c6e2b7be88a1d6a5786a09e289ba0b50cd0c13c1b45a2b95449a1b288c897ade0b62cc23f30383289c402e905ee49552ea49fb5bea337d6e3d8b17500b4014129f493c6a0750cdfdedd68507bcefddd3cd5eb5f48da13729727ca346bcc819afd7161eaa")
   body
     block body
+
+  foot
+    div(class="footer-top-border") &nbsp;
+    div(class="container swoop-footer") 
+        div(class="row")
+            div(class="span1")
+            ul(class='span9')
+                li(data-match-route="/about")
+                    a(href="not-yet") ABOUT
+                    &nbsp;|&nbsp;
+                li(data-match-route="/about")
+                    a(href="index") CONTACT
+                    &nbsp;|&nbsp;
+                li(data-match-route="/about")
+                    a(href="not-yet") TERMS
+                    &nbsp;|&nbsp;
+                li(data-match-route="/about")
+                    a(href="not-yet") POLICIES
+            div(class="span2")
+                &copy;&nbsp;Swoop It In, 2013

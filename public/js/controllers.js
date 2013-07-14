@@ -23,7 +23,20 @@ angular.module('myApp.controllers', []).
     // write Ctrl here
     console.log('on Admin page');
   }).
+  controller("LoginCtrl", function ($scope, $location, AuthenticationService) {
+    $scope.credentials = { email: "", password: "" };
+
+    $scope.login = function() {
+      AuthenticationService.login($scope.credentials).success(function() {
+        $location.path('/index');
+      });
+    };
+  }).
   controller('IndexCtrl', function ($scope) {
     // write Ctrl here
-
+    $scope.logout = function() {
+      AuthenticationService.logout().success(function() {
+        $location.path('/login');
+      });
+    };
   });

@@ -1,22 +1,25 @@
 extends layout
 
 block body
-	div(class='container')
-		div(ng-controller='AppCtrl')
-			div(class='navbar navbar-fixed-top', bs-navbar)
-				div(class='navbar-inner')
-					a(class='brand', href='#') Swoop It
+	div(ng-controller='AppCtrl')
+		div(class='navbar navbar-fixed-top', bs-navbar)
+			div(class='navbar-inner')
+				div(class="container")
+					a(class='brand', href='#') <b>swoop</b>it in
 
-					ul(class='nav')
+					ul(class='nav pull-right')
 						li(data-match-route="/about")
-							a(href="index") About
+							a(href="not-yet") <i class="icon-envelope">&nbsp;</i>
 						li(data-match-route="/about")
-							a(href="not-yet") View
-			
-			div(ng-view)
+							a(href="index") <i class="icon-group">&nbsp;</i>
+						li(data-match-route="/about")
+							a(href="not-yet") <i class="icon-gears">&nbsp;</i>
+		
+		div(ng-view)
 
 	script(src='js/lib/angular/angular.js')
 	script(src='js/lib/angular-strap.js')
+	script(src='js/lib/angular-sanitize.js')
 	script(src='js/app.js')
 	script(src='js/services.js')
 	script(src='js/controllers.js')

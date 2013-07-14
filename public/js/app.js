@@ -11,8 +11,12 @@ angular.module('myApp', [
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
+    when('/login', {
+      templateUrl: 'partials/login',
+      controller: 'LoginCtrl'
+    }).
     when('/index', {
-      templateUrl: 'partials/partial2',
+      templateUrl: 'partials/feed',
       controller: 'IndexCtrl'
     }).
     when('/not-yet', {
@@ -27,4 +31,42 @@ config(function ($routeProvider, $locationProvider) {
     });
 
   $locationProvider.html5Mode(true);
+}).
+config(function ($httpProvider) {
+
+  var logsOutUserOn401 = function($location, $q, SessionService, FlashService) {
+    var success = function(response) {
+      return response;
+    };
+
+    var error = function(response) {
+      if(response.status === 401) {
+        SessionService.unset('authenticated');
+        $location.path('/login');
+        FlashService.show(response.data.flash);
+        return $q.reject(response);
+      } else {
+        return $q.reject(response);
+      }
+    };
+
+    return function(promise) {
+      return promise.then(success, error);
+    };
+  };
+
+  $httpProvider.responseInterceptors.push(logsOutUserOn401);
+}).
+run(function($rootScope, $location, AuthenticationService, FlashService) {
+  var routesThatRequireAuth = ['/index'];
+
+  $rootScope.$on('$routeChangeStart', function(event, next, current) {
+    //if(routesThatRequireAuth.contains($location.path()) && !AuthenticationService.isLoggedIn()) {
+    console.log('routeChangeStarted ... ');
+    if(!AuthenticationService.isLoggedIn()) {
+      $location.path('/login');
+      FlashService.show("Please log in to continue.");
+    }
+    console.log('routeChangeStarted ... done');
+  });
 });
