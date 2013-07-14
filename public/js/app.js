@@ -11,19 +11,19 @@ angular.module('myApp', [
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
-    when('/view1', {
-      templateUrl: 'partials/partial1',
-      controller: 'MyCtrl1'
-    }).
-    when('/view2', {
+    when('/index', {
       templateUrl: 'partials/partial2',
-      controller: 'MyCtrl2'
+      controller: 'IndexCtrl'
+    }).
+    when('/not-yet', {
+      templateUrl: 'partials/not-yet',
+      controller: 'NotAllowedCtrl'
     }).
     when('/admin', {
       controller: 'AdminCtrl'
     }).
     otherwise({
-      redirectTo: '/view1'
+      redirectTo: '/not-yet'
     });
 
   $locationProvider.html5Mode(true);

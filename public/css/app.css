@@ -1,8 +1,10 @@
 /* app css stylesheet */
 
 body {
-	padding-top: 20px;
+	padding-top: 40px;
 	padding-bottom: 40px;
+	font-family: proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size:14px;
 }
 
 	  /* Custom container */

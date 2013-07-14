@@ -16,11 +16,14 @@ angular.module('myApp.controllers', []).
     });
 
   }).
+  controller('NotAllowedCtrl', function ($scope) {
+    $scope.notAllowed = false;	
+  }).
   controller('AdminCtrl', function ($scope) {
     // write Ctrl here
-	console.log('on Admin page');
+    console.log('on Admin page');
   }).
-  controller('MyCtrl2', function ($scope) {
+  controller('IndexCtrl', function ($scope) {
     // write Ctrl here
 
   });

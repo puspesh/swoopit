@@ -1,4 +1,35 @@
-p This is the partial for view 2.
-p
-  | Showing of 'interpolate' filter:
-  | {{ 'Current version is v%VERSION%.' | interpolate }}
+div(class="container-narrow")
+	div(class="jumbotron")
+		h1 Swoop It In!
+		p(class="lead") We are a stealth startup working on something cool and fun.  
+		a(class="btn btn-large btn-success", href="#") Coming soon
+
+	hr
+
+	div(class="row-fluid marketing")
+		div(class="span6")
+			h4
+				a(href="http://www.thefreedictionary.com/swoop") swoop [swu:p]
+			p v. swooped, swoop·ing, swoops
+			p v.intr.
+
+			h4 Subheading
+			p Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.
+
+			h4 Subheading
+			p Maecenas sed diam eget risus varius blandit sit amet non magna.
+
+		div(class="span6")
+			h4 Subheading
+			p Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+
+			h4 Subheading
+			p Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.
+
+			h4 Subheading
+			p Maecenas sed diam eget risus varius blandit sit amet non magna.      
+
+		p This is the partial for view 2.
+		p
+			| Showing of 'interpolate' filter:
+			| {{ 'Current version is v%VERSION%.' | interpolate }}

@@ -9,15 +9,17 @@ block body
 					Incorrect Username or Password!
 
 				form(action='', method="POST")
-						input(type="text", id="username", name="username", placeholder="Username", class="input-xlarge span4")
-						input(type="password", id="password", name="password", placeholder="Password", class="input-xlarge span4")
+					div(class="input-prepend input-block-level")
+						span(class="add-on")
+							i(class="icon-envelope")
+						input(type="text", id="username", name="username", placeholder="Username", class="input-xlarge span5")
+					div(class="input-prepend input-block-level")
+						span(class="add-on")
+							i(class="icon-key")
+						input(type="password", id="password", name="password", placeholder="Password", class="input-xlarge span5")
  
-						button(class="btn btn-info btn-block") Login
+					button(class="btn btn-info pull-right") Sign in
 
-
-			div
-				| Copyright: v
-				span(app-version)
 
 script(src='js/lib/angular/angular.js')
 script(src='js/lib/angular-strap.js')
