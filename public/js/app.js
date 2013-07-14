@@ -59,14 +59,11 @@ config(function ($httpProvider) {
 }).
 run(function($rootScope, $location, AuthenticationService, FlashService) {
   var routesThatRequireAuth = ['/index'];
-
   $rootScope.$on('$routeChangeStart', function(event, next, current) {
     //if(routesThatRequireAuth.contains($location.path()) && !AuthenticationService.isLoggedIn()) {
-    console.log('routeChangeStarted ... ');
-    if(!AuthenticationService.isLoggedIn()) {
+    if($location.path() != '/not-yet' && !AuthenticationService.isLoggedIn()) {
       $location.path('/login');
       FlashService.show("Please log in to continue.");
     }
-    console.log('routeChangeStarted ... done');
   });
 });
